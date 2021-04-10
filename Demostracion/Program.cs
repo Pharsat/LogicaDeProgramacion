@@ -4,70 +4,24 @@ namespace Demostracion
 {
     public class Program
     {
-
-        //boolean 1 o 0
-        //if, ingles, SI
-        //else, ingles, SI NO
-        public static bool CalcularDiyuncion(bool proposicionP, bool proposicionQ)
+        public static string ImprimirRepresentacionExtensivaDeUnConjunto(int[] Conjunto)
         {
-            if (proposicionP == false && proposicionQ == false)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        public static bool CalcularConjuncion(bool proposicionP, bool proposicionQ)
-        {
-            if (proposicionP == true && proposicionQ == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public static bool CalcularNegacion(bool proposicionP)
-        {
-            return !proposicionP;// ! = ¬
-        }
-
-        public static bool CalcularCondicional(bool proposicionImplica, bool proposicionImplicada)// p->Q === ¬P v Q
-        {
-            return CalcularDiyuncion(CalcularNegacion(proposicionImplica), proposicionImplicada);
-        }
-
-        public static bool CalcularBiCondicional(bool proposicionP, bool proposicionQ)
-        {
-            if (proposicionP == proposicionQ)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return $" = {{{string.Join(",", Conjunto)}}}";
         }
 
         static void Main(string[] args)
         {
 
-            var proposicionP = false;
-            var proposicionQ = false;
+            int[] A = { 1, 2, 3, 4, 5,233 };
 
-            var PyQ = CalcularConjuncion(proposicionP, proposicionQ);
-            var negacionDePyQ = CalcularNegacion(PyQ);
-            var PoQ = CalcularDiyuncion(proposicionP, proposicionQ);
-            var QimplicaP = CalcularCondicional(proposicionQ, proposicionP);
-            var PoQEquivaleQimplicaP = CalcularBiCondicional(PoQ, QimplicaP);
-            var resultado = CalcularCondicional(negacionDePyQ, PoQEquivaleQimplicaP);
+            int[] B = { 6, 7, 8, 9,233 };
 
-            Console.WriteLine("¬(P^Q) => ((PvQ) <=> (Q=>P)): " + (resultado ? "V" : "F"));
+            int[] AIntersectoB = TeoriaDeConjuntos.CalcularInterseccion(A, B);
+
+            int[] AUnidoB = TeoriaDeConjuntos.CalcularUnion(A, B);
+
+            Console.WriteLine("A intersecto de B " + ImprimirRepresentacionExtensivaDeUnConjunto(AIntersectoB));
+            Console.WriteLine("A unido  B " + ImprimirRepresentacionExtensivaDeUnConjunto(AUnidoB));
 
             Console.ReadLine();
         }
