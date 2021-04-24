@@ -12,16 +12,19 @@ namespace Demostracion
         static void Main(string[] args)
         {
 
-            int[] A = { 1, 2, 3, 4, 5,233 };
+            //int[] A = { 1, 2, 3, 4, 5,233 };
 
-            int[] B = { 6, 7, 8, 9,233 };
+            //int[] B = { 6, 7, 8, 9,233 };
 
-            int[] AIntersectoB = TeoriaDeConjuntos.CalcularInterseccion(A, B);
+            //int[] AIntersectoB = TeoriaDeConjuntos.CalcularInterseccion(A, B);
 
-            int[] AUnidoB = TeoriaDeConjuntos.CalcularUnion(A, B);
+            //int[] AUnidoB = TeoriaDeConjuntos.CalcularUnion(A, B);
 
-            Console.WriteLine("A intersecto de B " + ImprimirRepresentacionExtensivaDeUnConjunto(AIntersectoB));
-            Console.WriteLine("A unido  B " + ImprimirRepresentacionExtensivaDeUnConjunto(AUnidoB));
+            //Console.WriteLine("A intersecto de B " + ImprimirRepresentacionExtensivaDeUnConjunto(AIntersectoB));
+            //Console.WriteLine("A unido  B " + ImprimirRepresentacionExtensivaDeUnConjunto(AUnidoB));
+
+            ReglasDeInferencia.ReglasDeInferencia.EjecutarEjemplo();
+
 
             Console.ReadLine();
         }
