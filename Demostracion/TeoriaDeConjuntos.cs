@@ -16,10 +16,6 @@ namespace Demostracion
     {
         // AUnidoB = { 1,2,3,4,5,6,7 }
 
-        private static void AgregarEmentoAUnConjunto(int[] Conjunto, int elemento)
-        {
-        }
-
         public static int[] CalcularInterseccion(int[] A, int[] B)
         {
             int[] AIntersectoB = { };
